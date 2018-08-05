@@ -36,7 +36,6 @@ namespace Phoneword
                 "Yes",
                 "No"))
             {
-                //var dialer = DependencyService.Get<IDialer>();
                 var dialer = forms.getDependencyService();
                 if (dialer != null)
                     dialer.Dial(translatedNumber);
