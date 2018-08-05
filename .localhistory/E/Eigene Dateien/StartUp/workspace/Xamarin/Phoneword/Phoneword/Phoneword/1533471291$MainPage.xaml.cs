@@ -28,16 +28,15 @@ namespace Phoneword
             }
         }
 
-        async void OnCall(object sender, EventArgs e)
+        void OnCall(object sender, EventArgs e)
         {
-            if (await forms.FDisplayAlert(
+            if (forms.FDisplayAlert(
                 "Dial a Number",
                 "Would you like to call " + translatedNumber + "?",
                 "Yes",
-                "No"))
+                "No").Result)
             {
-                //var dialer = DependencyService.Get<IDialer>();
-                var dialer = forms.getDependencyService();
+                var dialer = DependencyService.Get<IDialer>();
                 if (dialer != null)
                     dialer.Dial(translatedNumber);
             }

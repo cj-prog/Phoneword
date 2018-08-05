@@ -5,7 +5,6 @@ namespace Phoneword
 {
     public partial class MainPage : ContentPage
     {
-        Forms forms = new Forms();
         string translatedNumber;
 
         public MainPage()
@@ -30,14 +29,13 @@ namespace Phoneword
 
         async void OnCall(object sender, EventArgs e)
         {
-            if (await forms.FDisplayAlert(
-                "Dial a Number",
-                "Would you like to call " + translatedNumber + "?",
-                "Yes",
-                "No"))
+            if (await this.DisplayAlert(
+                    "Dial a Number",
+                    "Would you like to call " + translatedNumber + "?",
+                    "Yes",
+                    "No"))
             {
-                //var dialer = DependencyService.Get<IDialer>();
-                var dialer = forms.getDependencyService();
+                var dialer = DependencyService.Get<IDialer>();
                 if (dialer != null)
                     dialer.Dial(translatedNumber);
             }
