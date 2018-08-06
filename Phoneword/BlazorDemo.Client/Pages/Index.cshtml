@@ -1,0 +1,43 @@
+﻿@using BlazorDemo
+@using BlazorDemo.Client
+@page "/"
+@page "/page/{Page}"
+
+    <p>Enter a Phoneword:</p>
+    <input value=mainPageInterface.phoneNumberText.Text bind="@mainPageInterface.phoneNumberText.Text" />
+    <button class="btn btn-primary" onclick="@(() => mainPageInterface.OnTranslate(mainPageInterface.phoneNumberText.Text))">Translate</button>
+
+    @*<button type="button" class="btn green" onclick="@(() => MessageBox(phoneNumberText) )">@translatedNumber</button>*@
+    <button type="button" class="btn green" onclick="@(() => mainPageInterface.OnCall(mainPageInterface.TranslatedNumber) )">@mainPageInterface.callButton.Text</button>
+
+
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title"><span id="messageBoxTitle"></span></h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <span id="numberToCall"></span>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn" data-dismiss="modal"><span id="messageBoxAccept"></span></button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal"><span id="messageBoxCancel"></span></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@functions {
+    MainPageInterface mainPageInterface = new MainPageInterface();
+
+    protected override async Task OnInitAsync()
+    {
+        mainPageInterface.callButton.Text = "Call";
+        mainPageInterface.phoneNumberText.Text = "1-855-XAMARIN";
+    }
+}

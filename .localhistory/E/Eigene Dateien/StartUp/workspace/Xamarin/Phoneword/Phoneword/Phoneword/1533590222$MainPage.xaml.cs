@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace Phoneword
 {
@@ -29,11 +30,13 @@ namespace Phoneword
 
         async void OnCall(object sender, EventArgs e)
         {
-            if (await forms.FormsDisplayAlert(
+            var displayAlert = await forms.FormsDisplayAlert(
                 "Dial a Number",
                 "Would you like to call " + translatedNumber + "?",
                 "Yes",
-                "No"))
+                "No");
+            Debug.WriteLine("Answer: " + displayAlert);
+            if (displayAlert)
             {
                 //var dialer = DependencyService.Get<IDialer>();
                 var dialer = forms.getDependencyService();
