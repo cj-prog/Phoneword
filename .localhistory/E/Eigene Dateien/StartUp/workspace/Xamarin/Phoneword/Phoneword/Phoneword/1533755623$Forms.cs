@@ -5,19 +5,12 @@ namespace Phoneword
 {
     public class Forms : ContentPage
     {
-        private Page Page;
-
-        public Forms(Page page)
-        {
-            Page = page;
-        }
-
         public Task<bool> FormsDisplayAlert(string title, string message, string accept, string cancel)
         {
-            return Page.DisplayAlert(title, message, accept, cancel);
+            return DisplayAlert(title, message, accept, cancel);
 
         }
-        public IDialer GetDependencyService()
+        public IDialer getDependencyService()
         {
             return DependencyService.Get<IDialer>();
         }

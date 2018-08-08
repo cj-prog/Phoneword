@@ -4,13 +4,12 @@ namespace Phoneword
 {
     public partial class MainPage
     {
-        private Forms forms;
+        Forms forms = new Forms();
         string translatedNumber;
 
         public MainPage()
         {
             InitializeComponent();
-            forms = new Forms(this);
         }
 
         void OnTranslate(object sender, EventArgs e)
@@ -37,7 +36,7 @@ namespace Phoneword
                 "No"))
             {
                 //var dialer = DependencyService.Get<IDialer>();
-                var dialer = forms.GetDependencyService();
+                var dialer = forms.getDependencyService();
                 if (dialer != null)
                     dialer.Dial(translatedNumber);
             }
