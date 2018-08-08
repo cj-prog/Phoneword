@@ -1,7 +1,7 @@
 ﻿using System;
-using BlazorDemo.Client;
+using Phoneword.Client;
 
-namespace BlazorDemo.Client
+namespace Phoneword.Client
 {
     public partial class MainPage : MainPageObjects
     {

@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Blazor.Browser.Services;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace BlazorDemo.Client
+namespace Phoneword.Client
 {
     public class Program
     {

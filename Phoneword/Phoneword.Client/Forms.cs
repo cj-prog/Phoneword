@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Blazor.Browser.Interop;
 
-namespace BlazorDemo.Client
+namespace Phoneword.Client
 {
     public class Forms
     {

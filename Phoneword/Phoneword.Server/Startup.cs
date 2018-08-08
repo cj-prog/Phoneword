@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace BlazorDemo.Server
+namespace Phoneword.Server
 {
     public class Startup
     {

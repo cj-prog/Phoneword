@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace BlazorDemo.Client
+namespace Phoneword.Client
 {
     public static class PhonewordTranslator
     {

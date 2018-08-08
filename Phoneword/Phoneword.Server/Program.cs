@@ -5,7 +5,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 
-namespace BlazorDemo.Server
+namespace Phoneword.Server
 {
     public class Program
     {

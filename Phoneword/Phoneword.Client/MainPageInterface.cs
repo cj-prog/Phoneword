@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BlazorDemo.Client
+namespace Phoneword.Client
 {
     public class MainPageObjects // load objects
     {

@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "BlazorDemo.Client": {
+    "Phoneword.Client": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
