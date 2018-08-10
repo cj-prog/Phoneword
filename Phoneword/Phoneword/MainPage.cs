@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 namespace Phoneword
 {
     public partial class MainPage
@@ -9,7 +10,7 @@ namespace Phoneword
         
         public MainPage()
         {
-            InitializeComponent();
+            this.InitializeComponent();
             forms = new Forms(this);
         }
 

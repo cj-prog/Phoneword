@@ -2,14 +2,14 @@
 
 namespace Phoneword.Client
 {
-    public partial class MainPage : MainPageObjects
+    public class MainPage : MainPageObjects
     {
         private Forms forms;
         public string TranslatedNumber;
 
         public MainPage()
-
         {
+            
             InitializeComponent();
             forms = new Forms(this);
         }

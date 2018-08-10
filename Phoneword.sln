@@ -15,8 +15,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Phoneword.Client", "Phonewo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Phoneword.Server", "Phoneword\Phoneword.Server\Phoneword.Server.csproj", "{A215B4B5-42F7-4E10-9F51-0D51E4848971}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{C7204627-F9DB-4F05-BE5B-FA7B99FF0257}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
