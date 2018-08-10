@@ -21,7 +21,6 @@ namespace Phoneword.Client
         public PhoneNumberText phoneNumberText = new PhoneNumberText();
         public object sender = new object();
         public EventArgs e = new EventArgs();
-        public Forms forms = new Forms();
     }
         
 
@@ -35,19 +34,8 @@ namespace Phoneword.Client
 
         public void OnCall(string translatedNumber)
         {
-            base.OnCall(translatedNumber);
-            //RegisteredFunction.Invoke<bool>("messageBox", translatedNumber);
-
-            //if (await _forms.DisplayAlert(
-            //    "Dial a Number",
-            //    "Would you like to call " + translatedNumber + "?",
-            //    "Yes",
-            //    "No"))
-            //{
-            //    //var dialer = _forms.GetDependencyService();
-            //    //if (dialer != null)
-            //    //    dialer.Dial(translatedNumber);
-            //}
+            TranslatedNumber = translatedNumber;
+            base.OnCall(sender, e);
         }
     }
 }

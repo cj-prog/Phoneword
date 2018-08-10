@@ -1,16 +1,17 @@
 ﻿using System;
-using Phoneword.Client;
 
 namespace Phoneword.Client
 {
     public partial class MainPage : MainPageObjects
     {
-        //private readonly Forms _forms = new Forms();
+        private Forms forms;
         public string TranslatedNumber;
 
         public MainPage()
+
         {
             InitializeComponent();
+            forms = new Forms(this);
         }
 
         public void OnTranslate(object sender, EventArgs e)
@@ -28,17 +29,17 @@ namespace Phoneword.Client
             }
         }
 
-        public async void OnCall(string translatedNumber)
+        public async void OnCall(object sender, EventArgs e)
         {
-            if (await forms.FDisplayAlert(
+            if (await forms.FormsDisplayAlert(
                 "Dial a Number",
-                "Would you like to call " + translatedNumber + "?",
+                "Would you like to call " + TranslatedNumber + "?",
                 "Yes",
                 "No"))
             {
                 var dialer = forms.GetDependencyService();
                 if (dialer != null)
-                    dialer.Dial(translatedNumber);
+                    dialer.Dial(TranslatedNumber);
             }
         }
     }

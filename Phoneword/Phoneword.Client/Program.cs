@@ -10,7 +10,6 @@ namespace Phoneword.Client
         {
             var serviceProvider = new BrowserServiceProvider(services =>
             {
-                //services.AddSingleton<IBooksClient, BooksAzureFunctionsClient>();
             });
 
             new BrowserRenderer(serviceProvider).AddComponent<App>("app");
