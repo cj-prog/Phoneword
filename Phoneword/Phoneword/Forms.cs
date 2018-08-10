@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace Phoneword 
+namespace Phoneword.XAMARIN 
 {
     public class Forms : ContentPage
     {

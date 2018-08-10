@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Phoneword
+namespace Phoneword.XAMARIN
 {
     public static class PhonewordTranslator
     {

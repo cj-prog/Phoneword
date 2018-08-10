@@ -1,4 +1,4 @@
-﻿namespace Phoneword
+﻿namespace Phoneword.XAMARIN
 {
     public interface IDialer
     {

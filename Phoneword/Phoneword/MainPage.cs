@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace Phoneword
+namespace Phoneword.XAMARIN
 {
     public partial class MainPage
     {

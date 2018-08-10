@@ -1,4 +1,4 @@
-﻿using Phoneword.UWP;
+﻿using Phoneword.XAMARIN.UWP;
 using System;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Calls;
@@ -6,7 +6,7 @@ using Windows.UI.Popups;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(PhoneDialer))]
-namespace Phoneword.UWP
+namespace Phoneword.XAMARIN.UWP
 {
     public class PhoneDialer : IDialer
     {
