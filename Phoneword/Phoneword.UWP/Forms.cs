@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Windows.UI.Popups;
-using Xamarin.Forms;
 
 namespace Phoneword.UWP
 {
