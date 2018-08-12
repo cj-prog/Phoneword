@@ -11,8 +11,8 @@
             <TextBlock Text="Enter a Phoneword:" />
             <TextBox x:Name="phoneNumberText" Text="1-855-XAMARIN" />
             <StackPanel Orientation="Horizontal">
-                <!--<Button x:Name="translateButon" BorderBrush="Black" Content="Translate" Click="OnTranslate"/>-->
-                <!--<Button x:Name="callButton" Content="Call" BorderBrush="Black" IsEnabled="false" Click="OnCall" />-->
+                <Button x:Name="translateButon" BorderBrush="Black" Content="Translate" Click="OnTranslate"/>
+                <Button x:Name="callButton" Content="Call" BorderBrush="Black" IsEnabled="false" Click="OnCall" />
             </StackPanel>
         </StackPanel>
 

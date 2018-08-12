@@ -43,7 +43,8 @@ namespace Phoneword.UWP
 
         public IDialer GetDependencyService()
         {
-            return DependencyService.Get<IDialer>();
+            //return DependencyService.Get<IDialer>();
+            return null;
         }
         
 
