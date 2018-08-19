@@ -16,6 +16,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0" Orientation="Vertical">
@@ -32,7 +33,7 @@
             <Button Content="Add" Click="{x:Bind  Organization.Add}" Margin="5"/>
         </StackPanel>
 
-        <StackPanel Grid.Column="2" Orientation="Vertical"
+        <StackPanel Grid.Column="1" Orientation="Vertical"
                     Visibility="{x:Bind Organization.SelectedPerson, Mode=OneWay, Converter={StaticResource ObjectExistsToVisible}}" >
             <TextBox 
                 Text="{x:Bind Organization.SelectedPerson.Name, Mode=TwoWay, FallbackValue=''}" 
@@ -41,6 +42,16 @@
                 Text="{x:Bind Organization.SelectedPerson.Age, Mode=TwoWay, FallbackValue='0'}" 
                 Margin="5" />
             <Button Content="Delete" Click="{x:Bind Organization.Delete}" Margin="5" />
+        </StackPanel>
+
+        <StackPanel Grid.Column="3">
+            <TextBlock Text="Enter a Phoneword:" />
+            <!--<TextBox x:Name="phoneNumberText" Text="1-855-XAMARIN" />-->
+            <TextBox Text="{x:Bind PhonewordTranslator.PhoneNumberText, Mode=TwoWay, FallbackValue=''}" />
+            <StackPanel Orientation="Horizontal">
+                <!--<Button x:Name="translateButon" BorderBrush="Black" Content="Translate" Click="OnTranslate"/>-->
+                <!--<Button x:Name="callButton" Content="Call" BorderBrush="Black" IsEnabled="false" Click="OnCall" />-->
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Page>

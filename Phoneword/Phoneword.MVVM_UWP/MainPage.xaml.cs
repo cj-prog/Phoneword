@@ -27,8 +27,10 @@ namespace Phoneword.MVVM_UWP
         {
             this.InitializeComponent();
             Organization = new OrganizationViewModel("Office");
+            PhonewordTranslator = new PhonewordTranslatorViewModel();
         }
 
         public OrganizationViewModel Organization { get; set; }
+        public PhonewordTranslatorViewModel PhonewordTranslator { get; set; }
     }
 }

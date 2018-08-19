@@ -31,15 +31,13 @@ namespace ViewModels
         }
 
         String _Name;
-        public String Name
-        {
-            get { return organization.Name; }
-        }
+        public String Name => organization.Name;
+
 
         int _SelectedIndex;
         public int SelectedIndex
         {
-            get { return _SelectedIndex; }
+            get => _SelectedIndex;
             set
             {
                 if (SetProperty(ref _SelectedIndex, value))
