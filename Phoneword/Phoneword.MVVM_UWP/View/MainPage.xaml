@@ -49,6 +49,8 @@
             <!--<TextBox x:Name="phoneNumberText" Text="1-855-XAMARIN" />-->
             <TextBox Text="{x:Bind PhonewordTranslator.PhoneNumberText, Mode=TwoWay, FallbackValue=''}" />
             <StackPanel Orientation="Horizontal">
+                <Button Content="Translate" Click="{x:Bind PhonewordTranslator.Translate}" />
+                <Button Content="Call" Click="{x:Bind PhonewordTranslator.Call}" />
                 <!--<Button x:Name="translateButon" BorderBrush="Black" Content="Translate" Click="OnTranslate"/>-->
                 <!--<Button x:Name="callButton" Content="Call" BorderBrush="Black" IsEnabled="false" Click="OnCall" />-->
             </StackPanel>

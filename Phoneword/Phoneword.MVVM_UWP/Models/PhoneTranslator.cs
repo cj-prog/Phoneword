@@ -60,5 +60,58 @@ namespace Models
             }
             return null;
         }
+
+        //public (bool IsEnabled, string Text, string TranslatedNumber) Translate(string phoneNumberText)
+        //{
+        //    // return isEnabled and button Text.
+
+        //    var translatedNumber = ToNumber(phoneNumberText);
+        //    var buttonText = "Call";
+
+        //    if (string.IsNullOrWhiteSpace(translatedNumber)) return (false, buttonText, translatedNumber);
+
+        //    buttonText = "Call " + translatedNumber;
+
+        //    return (true, buttonText, translatedNumber);
+
+        //}
+
+        public void Translate(string phoneNumberText)
+        {
+            // return isEnabled and button Text.
+
+            var translatedNumber = ToNumber(phoneNumberText);
+            var buttonText = "Call";
+
+            //if (string.IsNullOrWhiteSpace(translatedNumber)) return (false, buttonText, translatedNumber);
+
+            buttonText = "Call " + translatedNumber;
+
+            //return (true, buttonText, translatedNumber);
+
+        }
+
+        public void Call(string TranslatedNumber)
+        {
+            //return
+            //(
+            //    "Dial a Number",
+            //    " Would you like to call" + TranslatedNumber + "?",
+            //    "Yes",
+            //    "No"
+            //);
+        }
     }
+
+    //    public (string title, string message, string accept, string cancel) Call(string TranslatedNumber)
+    //    {
+    //        return
+    //        (
+    //            "Dial a Number",
+    //            " Would you like to call" + TranslatedNumber + "?",
+    //            "Yes",
+    //            "No"
+    //        );
+    //    }
+    //}
 }
