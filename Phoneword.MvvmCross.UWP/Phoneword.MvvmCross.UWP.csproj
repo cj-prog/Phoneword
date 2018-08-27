@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{C7956E75-F0FF-4486-8189-66431DA87F57}</ProjectGuid>
+    <ProjectGuid>{171AEE1E-9D75-4C3D-9812-E7158E0BC171}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Phoneword.MVVM_Cross.UWP</RootNamespace>
-    <AssemblyName>Phoneword.MVVM_Cross.UWP</AssemblyName>
+    <RootNamespace>Phoneword.MvvmCross.UWP</RootNamespace>
+    <AssemblyName>Phoneword.MvvmCross.UWP</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17134.0</TargetPlatformVersion>
@@ -17,7 +17,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
-    <PackageCertificateKeyFile>Phoneword.MVVM_Cross.UWP_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>Phoneword.MvvmCross.UWP_TemporaryKey.pfx</PackageCertificateKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -95,20 +95,19 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\Services\DialogService.cs" />
-    <Compile Include="Views\CallDialog.xaml.cs">
-      <DependentUpon>CallDialog.xaml</DependentUpon>
+    <Compile Include="Views\Speech.xaml.cs">
+      <DependentUpon>Speech.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TipView.xaml.cs">
+      <DependentUpon>TipView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="Phoneword.MVVM_Cross.UWP_TemporaryKey.pfx" />
+    <None Include="Phoneword.MvvmCross.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\Default.rd.xml" />
@@ -125,14 +124,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Views\MainPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\CallDialog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
@@ -140,9 +131,24 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Phoneword.MVVM_Cross.Core\Phoneword.MVVM_Cross.Core.csproj">
-      <Project>{0AF6CBF8-0B45-49CE-8426-30D21C5D6031}</Project>
-      <Name>Phoneword.MVVM_Cross.Core</Name>
+    <Reference Include="MvvmCross">
+      <HintPath>C:\Users\Christian\.nuget\packages\mvvmcross\6.1.2\lib\uap10.0.16299\MvvmCross.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\Speech.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TipView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Phoneword\Phoneword.MvvmCross.Core\Phoneword.MvvmCross.Core.csproj">
+      <Project>{58eb58e1-afdc-41e6-a3c1-26f44daf5ef6}</Project>
+      <Name>Phoneword.MvvmCross.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

@@ -1,15 +1,15 @@
-﻿using MvvmCross.Core.ViewModels;
-using Phoneword.MVVM_Cross.Core.Interfaces;
-using Phoneword.MVVM_Cross.Core.Models;
+﻿using MvvmCross.ViewModels;
+using Phoneword.MvvmCross.Core.Models;
+using Phoneword.MvvmCross.Core.Services;
 
-namespace Phoneword.MVVM_Cross.Core.ViewModels
+namespace Phoneword.MvvmCross.Core.ViewModels
 {
     public class PhonewordTranslatorViewModel : MvxViewModel
     {
         PhonewordTranslator phonewordTranslator;
-        readonly IDialogService _dialog;
+        readonly ISpeechDialogService _dialog;
 
-        public PhonewordTranslatorViewModel(IDialogService dialog)
+        public PhonewordTranslatorViewModel(ISpeechDialogService dialog)
         {
             phonewordTranslator = new PhonewordTranslator();
             // Call to set default phone number text.
@@ -17,13 +17,11 @@ namespace Phoneword.MVVM_Cross.Core.ViewModels
             // Call to set call button state and text.
             Translate();
             _dialog = dialog;
-            _callButtonText = "Call";
 
         }
 
         private bool _callButtonEnabled;
         private string _callButtonText;
-        public string CallButtonText { get=>_callButtonText; set=> SetProperty(ref _callButtonText, value); }
         private string _translatedNumber;
 
         private string _phoneNumberText;
@@ -32,22 +30,19 @@ namespace Phoneword.MVVM_Cross.Core.ViewModels
             get => _phoneNumberText;
             set
             {
-                //_phoneNumberText = value;
-                //RaisePropertyChanged(() => phonewordTranslator.PhoneNumberText(value));
                 SetProperty(ref _phoneNumberText, value);
             }
         }
 
+        public bool PopUpOpened { get; set; }
+
+
         public void Translate()
         {
-            var callButton = phonewordTranslator.Translate(_phoneNumberText);
-            _callButtonEnabled = callButton.isEnabled;
-            _callButtonText = callButton.buttonText;
-            _translatedNumber = callButton.translatedNumber;
-            SetProperty(ref _callButtonText, "test123");
-            
-            
-
+            //var callButton = phonewordTranslator.Translate(_phoneNumberText);
+            //_callButtonEnabled = callButton.IsEnabled;
+            //_callButtonText = callButton.Text;
+            //_translatedNumber = callButton.TranslatedNumber;
 
         }
 

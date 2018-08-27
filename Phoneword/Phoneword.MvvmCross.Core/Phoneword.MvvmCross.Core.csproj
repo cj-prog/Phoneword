@@ -5,7 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MvvmCross.Core" Version="4.4.0" />
+    <Reference Include="MvvmCross">
+      <HintPath>C:\Users\Christian\.nuget\packages\mvvmcross\6.1.2\lib\netstandard2.0\MvvmCross.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

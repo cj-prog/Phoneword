@@ -1,4 +1,4 @@
-﻿namespace Phoneword.MVVM_Cross.Core.Interfaces
+﻿namespace Phoneword.MvvmCross.Core.Services
 {
     public interface IDialer
     {

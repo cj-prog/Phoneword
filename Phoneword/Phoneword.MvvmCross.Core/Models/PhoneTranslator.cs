@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Text;
 
-namespace Phoneword.MVVM_Cross.Core.Models
+namespace Phoneword.MvvmCross.Core.Models
 {
     public class PhonewordTranslator //TEST
     {
+
         public String PhoneNumberText(string phoneNumberText)
         {
             if (phoneNumberText != "")
@@ -37,7 +38,6 @@ namespace Phoneword.MVVM_Cross.Core.Models
                         return null;
                 }
             }
-
             return newNumber.ToString();
         }
 
@@ -46,8 +46,7 @@ namespace Phoneword.MVVM_Cross.Core.Models
             return keyString.IndexOf(c) >= 0;
         }
 
-        static readonly string[] digits =
-        {
+        static readonly string[] digits = {
             "ABC", "DEF", "GHI", "JKL", "MNO", "PQRS", "TUV", "WXYZ"
         };
 
@@ -59,7 +58,6 @@ namespace Phoneword.MVVM_Cross.Core.Models
                 if (Contains(digits[i], c))
                     return 2 + i;
             }
-
             return null;
         }
 
@@ -78,18 +76,19 @@ namespace Phoneword.MVVM_Cross.Core.Models
 
         //}
 
-        public (Boolean isEnabled, string buttonText, string translatedNumber) Translate(string phoneNumberText)
+        public void Translate(string phoneNumberText)
         {
             // return isEnabled and button Text.
 
             var translatedNumber = ToNumber(phoneNumberText);
             var buttonText = "Call";
 
-            if (string.IsNullOrWhiteSpace(translatedNumber)) return (false, buttonText, translatedNumber);
+            //if (string.IsNullOrWhiteSpace(translatedNumber)) return (false, buttonText, translatedNumber);
 
             buttonText = "Call " + translatedNumber;
 
-            return (true, buttonText, translatedNumber);
+            //return (true, buttonText, translatedNumber);
+
         }
 
         public void Call(string TranslatedNumber)
@@ -103,16 +102,4 @@ namespace Phoneword.MVVM_Cross.Core.Models
             //);
         }
     }
-
-    //    public (string title, string message, string accept, string cancel) Call(string TranslatedNumber)
-    //    {
-    //        return
-    //        (
-    //            "Dial a Number",
-    //            " Would you like to call" + TranslatedNumber + "?",
-    //            "Yes",
-    //            "No"
-    //        );
-    //    }
-    //}
 }

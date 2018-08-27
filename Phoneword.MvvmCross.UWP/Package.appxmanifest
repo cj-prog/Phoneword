@@ -7,14 +7,14 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="1d41d715-a79e-4c21-9868-614566bc0cd1"
+    Name="594975ed-937d-4870-8c0b-8fa2351f82a0"
     Publisher="CN=Christian"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="1d41d715-a79e-4c21-9868-614566bc0cd1" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="594975ed-937d-4870-8c0b-8fa2351f82a0" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>Phoneword.MVVM_Cross.UWP</DisplayName>
+    <DisplayName>Phoneword.MvvmCross.UWP</DisplayName>
     <PublisherDisplayName>Christian</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -30,12 +30,12 @@
   <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="Phoneword.MVVM_Cross.UWP.App">
+      EntryPoint="Phoneword.MvvmCross.UWP.App">
       <uap:VisualElements
-        DisplayName="Phoneword.MVVM_Cross.UWP"
+        DisplayName="Phoneword.MvvmCross.UWP"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="Phoneword.MVVM_Cross.UWP"
+        Description="Phoneword.MvvmCross.UWP"
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
