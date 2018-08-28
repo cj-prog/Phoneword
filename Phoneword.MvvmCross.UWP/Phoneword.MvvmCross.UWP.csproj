@@ -99,8 +99,8 @@
     <Compile Include="Views\Speech.xaml.cs">
       <DependentUpon>Speech.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TipView.xaml.cs">
-      <DependentUpon>TipView.xaml</DependentUpon>
+    <Compile Include="Views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -140,7 +140,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\TipView.xaml">
+    <Page Include="Views\MainView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

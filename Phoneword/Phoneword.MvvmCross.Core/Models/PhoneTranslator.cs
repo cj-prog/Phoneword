@@ -61,35 +61,35 @@ namespace Phoneword.MvvmCross.Core.Models
             return null;
         }
 
-        //public (bool IsEnabled, string Text, string TranslatedNumber) Translate(string phoneNumberText)
-        //{
-        //    // return isEnabled and button Text.
-
-        //    var translatedNumber = ToNumber(phoneNumberText);
-        //    var buttonText = "Call";
-
-        //    if (string.IsNullOrWhiteSpace(translatedNumber)) return (false, buttonText, translatedNumber);
-
-        //    buttonText = "Call " + translatedNumber;
-
-        //    return (true, buttonText, translatedNumber);
-
-        //}
-
-        public void Translate(string phoneNumberText)
+        public (bool IsEnabled, string Text, string TranslatedNumber) Translate(string phoneNumberText)
         {
             // return isEnabled and button Text.
 
             var translatedNumber = ToNumber(phoneNumberText);
             var buttonText = "Call";
 
-            //if (string.IsNullOrWhiteSpace(translatedNumber)) return (false, buttonText, translatedNumber);
+            if (string.IsNullOrWhiteSpace(translatedNumber)) return (false, buttonText, translatedNumber);
 
             buttonText = "Call " + translatedNumber;
 
-            //return (true, buttonText, translatedNumber);
+            return (true, buttonText, translatedNumber);
 
         }
+
+        //public void Translate(string phoneNumberText)
+        //{
+        //    // return isEnabled and button Text.
+
+        //    var translatedNumber = ToNumber(phoneNumberText);
+        //    var buttonText = "Call";
+
+        //    //if (string.IsNullOrWhiteSpace(translatedNumber)) return (false, buttonText, translatedNumber);
+
+        //    buttonText = "Call " + translatedNumber;
+
+        //    //return (true, buttonText, translatedNumber);
+
+        //}
 
         public void Call(string TranslatedNumber)
         {

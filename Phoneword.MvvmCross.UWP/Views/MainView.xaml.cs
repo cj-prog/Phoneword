@@ -4,7 +4,7 @@ using Phoneword.MvvmCross.Core.ViewModels;
 
 namespace Phoneword.MvvmCross.UWP.Views
 {
-    [MvxViewFor(typeof(TipViewModel))]
+    [MvxViewFor(typeof(PhonewordTranslatorViewModel))]
     public sealed partial class TipView : MvxWindowsPage
     {
         public TipView()

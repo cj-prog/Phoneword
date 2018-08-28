@@ -1,4 +1,7 @@
-﻿using MvvmCross.ViewModels;
+﻿using System.Threading.Tasks;
+using System.Windows.Input;
+using MvvmCross.Commands;
+using MvvmCross.ViewModels;
 using Phoneword.MvvmCross.Core.Models;
 using Phoneword.MvvmCross.Core.Services;
 
@@ -9,46 +12,63 @@ namespace Phoneword.MvvmCross.Core.ViewModels
         PhonewordTranslator phonewordTranslator;
         readonly ISpeechDialogService _dialog;
 
-        public PhonewordTranslatorViewModel(ISpeechDialogService dialog)
+        public PhonewordTranslatorViewModel()//ISpeechDialogService dialog)
         {
+
+            //_dialog = dialog;
+
+        }
+
+        public override async Task Initialize()
+        {
+            await base.Initialize();
+
             phonewordTranslator = new PhonewordTranslator();
             // Call to set default phone number text.
             _phoneNumberText = phonewordTranslator.PhoneNumberText("");
             // Call to set call button state and text.
-            Translate();
-            _dialog = dialog;
-
+            DoTranslate();
         }
+
 
         private bool _callButtonEnabled;
         private string _callButtonText;
         private string _translatedNumber;
 
         private string _phoneNumberText;
+        
+
         public string PhoneNumberText
         {
             get => _phoneNumberText;
             set
             {
-                SetProperty(ref _phoneNumberText, value);
+                _phoneNumberText = value;
+                RaisePropertyChanged(() => PhoneNumberText);
             }
         }
 
-        public bool PopUpOpened { get; set; }
+        private ICommand _translate;
+        public ICommand Translate => _translate ?? (_translate = new  MvxCommand(DoTranslate));
+
+        private ICommand _call;
+        public ICommand Call => _translate ?? (_translate = new  MvxCommand(DoCall));
 
 
-        public void Translate()
+
+
+        public void DoTranslate()
         {
-            //var callButton = phonewordTranslator.Translate(_phoneNumberText);
-            //_callButtonEnabled = callButton.IsEnabled;
-            //_callButtonText = callButton.Text;
-            //_translatedNumber = callButton.TranslatedNumber;
+            var callButton = phonewordTranslator.Translate(_phoneNumberText);
+            _callButtonEnabled = callButton.IsEnabled;
+            _callButtonText = callButton.Text;
+            _translatedNumber = callButton.TranslatedNumber;
 
         }
 
-        public async void Call()
+        public async void DoCall()
         {
-            await _dialog.ShowAsync();
+            //await _dialog.ShowAsync();
             //var dialog = phonewordTranslator.Call(_translatedNumber);
             //new MessageDialogResult(dialog.title, dialog.message, dialog.accept, dialog.cancel);
         }
