@@ -6,6 +6,7 @@ using Windows.UI.Popups;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(PhoneDialer))]
+
 namespace Phoneword.XAMARIN.UWP
 {
     public class PhoneDialer : IDialer

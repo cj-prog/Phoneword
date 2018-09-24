@@ -6,6 +6,7 @@ using Xamarin.Forms;
 using Uri = Android.Net.Uri;
 
 [assembly: Dependency(typeof(PhoneDialer))]
+
 namespace Phoneword.Droid
 {
     public class PhoneDialer : IDialer

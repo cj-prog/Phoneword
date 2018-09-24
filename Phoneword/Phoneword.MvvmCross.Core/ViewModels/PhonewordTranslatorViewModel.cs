@@ -1,21 +1,25 @@
 ﻿using System.Threading.Tasks;
 using System.Windows.Input;
-using MvvmCross.Commands;
-using MvvmCross.ViewModels;
+using MvvmCross;
+using MvvmCross.Core.ViewModels;
 using Phoneword.MvvmCross.Core.Models;
 using Phoneword.MvvmCross.Core.Services;
+using IMvxBundle = MvvmCross.Core.ViewModels.IMvxBundle;
+using IMvxViewModel = MvvmCross.Core.ViewModels.IMvxViewModel;
+using MvxCommand = MvvmCross.Commands.MvxCommand;
+using MvxViewModel = MvvmCross.ViewModels.MvxViewModel;
 
 namespace Phoneword.MvvmCross.Core.ViewModels
 {
-    public class PhonewordTranslatorViewModel : MvxViewModel
+    public class PhonewordTranslatorViewModel : MvxViewModel, IMvxViewModel
     {
         PhonewordTranslator phonewordTranslator;
         readonly ISpeechDialogService _dialog;
 
-        public PhonewordTranslatorViewModel()//ISpeechDialogService dialog)
+        public PhonewordTranslatorViewModel(ISpeechDialogService dialog)
         {
 
-            //_dialog = dialog;
+            _dialog = dialog;
 
         }
 
@@ -68,13 +72,28 @@ namespace Phoneword.MvvmCross.Core.ViewModels
 
         public async void DoCall()
         {
-            //await _dialog.ShowAsync();
+            var _dialog = Mvx.Resolve<ISpeechDialogService>();
+            await _dialog.ShowAsync();
             //var dialog = phonewordTranslator.Call(_translatedNumber);
             //new MessageDialogResult(dialog.title, dialog.message, dialog.accept, dialog.cancel);
         }
 
 
+        public void Init(IMvxBundle parameters)
+        {
+            throw new System.NotImplementedException();
+        }
 
+        public void ReloadState(IMvxBundle state)
+        {
+            throw new System.NotImplementedException();
+        }
 
+        public void SaveState(IMvxBundle state)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public MvxRequestedBy RequestedBy { get; set; }
     }
 }

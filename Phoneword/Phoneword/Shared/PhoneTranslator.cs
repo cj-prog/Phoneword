@@ -2,7 +2,7 @@
 
 namespace Phoneword
 {
-    public static class PhonewordTranslator //TEST
+    public static class PhonewordTranslator
     {
         public static string ToNumber(string raw)
         {
