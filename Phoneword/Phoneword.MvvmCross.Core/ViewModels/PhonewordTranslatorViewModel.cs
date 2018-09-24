@@ -16,6 +16,7 @@ namespace Phoneword.MvvmCross.Core.ViewModels
         PhonewordTranslator phonewordTranslator;
         readonly ISpeechDialogService _dialog;
 
+<<<<<<< HEAD
         public PhonewordTranslatorViewModel(ISpeechDialogService dialog)
         {
 
@@ -23,6 +24,8 @@ namespace Phoneword.MvvmCross.Core.ViewModels
 
         }
 
+=======
+>>>>>>> d3523ae
         public override async Task Initialize()
         {
             await base.Initialize();
@@ -72,7 +75,6 @@ namespace Phoneword.MvvmCross.Core.ViewModels
             _callButtonText = callButton.Text;
             _translatedNumber = callButton.TranslatedNumber;
             RaisePropertyChanged(() => CallContent);
-
         }
 
         public async void DoCall()

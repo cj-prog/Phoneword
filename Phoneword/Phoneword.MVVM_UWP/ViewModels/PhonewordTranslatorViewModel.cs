@@ -18,8 +18,7 @@ namespace ViewModels
             phonewordTranslator = new PhonewordTranslator();
             // Call to set default phone number text.
             _phoneNumberText = phonewordTranslator.PhoneNumberText("");
-            // Call to set call button state and text.
-            Translate();
+            //Translate();
             _dialog = dialog;
 
         }
@@ -39,23 +38,23 @@ namespace ViewModels
             } 
         }
 
-        public bool PopUpOpened { get; set; }
+        private string _callContent;
+        public string CallContent
+        {
+            get { return _callContent; }
+        }
 
 
         public void Translate()
         {
-            //var callButton = phonewordTranslator.Translate(_phoneNumberText);
-            //_callButtonEnabled = callButton.IsEnabled;
-            //_callButtonText = callButton.Text;
-            //_translatedNumber = callButton.TranslatedNumber;
+            _callContent = phonewordTranslator.Translate(_phoneNumberText);
+            RaisePropertyChanged(CallContent);
 
         }
 
         public async void Call()
         {
             await _dialog.ShowAsync();
-            //var dialog = phonewordTranslator.Call(_translatedNumber);
-            //new MessageDialogResult(dialog.title, dialog.message, dialog.accept, dialog.cancel);
         }
 
 

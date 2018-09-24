@@ -61,22 +61,7 @@ namespace Models
             return null;
         }
 
-        //public (bool IsEnabled, string Text, string TranslatedNumber) Translate(string phoneNumberText)
-        //{
-        //    // return isEnabled and button Text.
-
-        //    var translatedNumber = ToNumber(phoneNumberText);
-        //    var buttonText = "Call";
-
-        //    if (string.IsNullOrWhiteSpace(translatedNumber)) return (false, buttonText, translatedNumber);
-
-        //    buttonText = "Call " + translatedNumber;
-
-        //    return (true, buttonText, translatedNumber);
-
-        //}
-
-        public void Translate(string phoneNumberText)
+        public string Translate(string phoneNumberText)
         {
             // return isEnabled and button Text.
 
@@ -86,6 +71,7 @@ namespace Models
             //if (string.IsNullOrWhiteSpace(translatedNumber)) return (false, buttonText, translatedNumber);
 
             buttonText = "Call " + translatedNumber;
+            return buttonText;
 
             //return (true, buttonText, translatedNumber);
 
