@@ -16,16 +16,13 @@ namespace Phoneword.MvvmCross.Core.ViewModels
         PhonewordTranslator phonewordTranslator;
         readonly ISpeechDialogService _dialog;
 
-<<<<<<< HEAD
-        public PhonewordTranslatorViewModel(ISpeechDialogService dialog)
-        {
+        //public PhonewordTranslatorViewModel(ISpeechDialogService dialog)
+        //{
 
-            _dialog = dialog;
+        //    _dialog = dialog;
 
-        }
+        //}
 
-=======
->>>>>>> d3523ae
         public override async Task Initialize()
         {
             await base.Initialize();
