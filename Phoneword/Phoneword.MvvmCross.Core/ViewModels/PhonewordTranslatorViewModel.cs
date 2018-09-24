@@ -27,7 +27,8 @@ namespace Phoneword.MvvmCross.Core.ViewModels
             // Call to set default phone number text.
             _phoneNumberText = phonewordTranslator.PhoneNumberText("");
             // Call to set call button state and text.
-            DoTranslate();
+            //DoTranslate();
+            _callButtonText = "Call";
         }
 
 
@@ -48,6 +49,11 @@ namespace Phoneword.MvvmCross.Core.ViewModels
             }
         }
 
+        public string CallContent
+        {
+            get => _callButtonText;
+        }
+
         private ICommand _translate;
         public ICommand Translate => _translate ?? (_translate = new  MvxCommand(DoTranslate));
 
@@ -63,6 +69,7 @@ namespace Phoneword.MvvmCross.Core.ViewModels
             _callButtonEnabled = callButton.IsEnabled;
             _callButtonText = callButton.Text;
             _translatedNumber = callButton.TranslatedNumber;
+            RaisePropertyChanged(() => CallContent);
 
         }
 

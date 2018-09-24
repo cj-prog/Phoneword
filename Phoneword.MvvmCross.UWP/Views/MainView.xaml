@@ -7,13 +7,10 @@
                       mc:Ignorable="d">
     <StackPanel>
         <TextBlock Text="Enter a Phoneword:" />
-        <!--<TextBox x:Name="phoneNumberText" Text="1-855-XAMARIN" />-->
         <TextBox Text="{Binding PhoneNumberText}" />
         <StackPanel Orientation="Horizontal">
             <Button Content="Translate" Command="{Binding Translate}" />
-            <Button Content="Call" Command="{Binding Call}" />
-            <!--<Button x:Name="translateButon" BorderBrush="Black" Content="Translate" Click="OnTranslate"/>-->
-            <!--<Button x:Name="callButton" Content="Call" BorderBrush="Black" IsEnabled="false" Click="OnCall" />-->
+            <Button Content="{Binding CallContent}" Command="{Binding Call}" />
         </StackPanel>
     </StackPanel>
 </views:MvxWindowsPage>
