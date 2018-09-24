@@ -1,27 +1,23 @@
 ﻿using System.Threading.Tasks;
 using System.Windows.Input;
-using MvvmCross;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.Commands;
+using MvvmCross.ViewModels;
 using Phoneword.MvvmCross.Core.Models;
 using Phoneword.MvvmCross.Core.Services;
-using IMvxBundle = MvvmCross.Core.ViewModels.IMvxBundle;
-using IMvxViewModel = MvvmCross.Core.ViewModels.IMvxViewModel;
-using MvxCommand = MvvmCross.Commands.MvxCommand;
-using MvxViewModel = MvvmCross.ViewModels.MvxViewModel;
 
 namespace Phoneword.MvvmCross.Core.ViewModels
 {
-    public class PhonewordTranslatorViewModel : MvxViewModel, IMvxViewModel
+    public class PhonewordTranslatorViewModel : MvxViewModel
     {
         PhonewordTranslator phonewordTranslator;
         readonly ISpeechDialogService _dialog;
 
-        //public PhonewordTranslatorViewModel(ISpeechDialogService dialog)
-        //{
+        public PhonewordTranslatorViewModel()//ISpeechDialogService dialog)
+        {
 
-        //    _dialog = dialog;
+            //_dialog = dialog;
 
-        //}
+        }
 
         public override async Task Initialize()
         {
@@ -30,7 +26,8 @@ namespace Phoneword.MvvmCross.Core.ViewModels
             phonewordTranslator = new PhonewordTranslator();
             // Call to set default phone number text.
             _phoneNumberText = phonewordTranslator.PhoneNumberText("");
-            _callButtonText = "Call";
+            // Call to set call button state and text.
+            DoTranslate();
         }
 
 
@@ -51,11 +48,6 @@ namespace Phoneword.MvvmCross.Core.ViewModels
             }
         }
 
-        public string CallContent
-        {
-            get => _callButtonText;
-        }
-
         private ICommand _translate;
         public ICommand Translate => _translate ?? (_translate = new  MvxCommand(DoTranslate));
 
@@ -71,33 +63,18 @@ namespace Phoneword.MvvmCross.Core.ViewModels
             _callButtonEnabled = callButton.IsEnabled;
             _callButtonText = callButton.Text;
             _translatedNumber = callButton.TranslatedNumber;
-            RaisePropertyChanged(() => CallContent);
+
         }
 
         public async void DoCall()
         {
-            var _dialog = Mvx.Resolve<ISpeechDialogService>();
-            await _dialog.ShowAsync();
+            //await _dialog.ShowAsync();
             //var dialog = phonewordTranslator.Call(_translatedNumber);
             //new MessageDialogResult(dialog.title, dialog.message, dialog.accept, dialog.cancel);
         }
 
 
-        public void Init(IMvxBundle parameters)
-        {
-            throw new System.NotImplementedException();
-        }
 
-        public void ReloadState(IMvxBundle state)
-        {
-            throw new System.NotImplementedException();
-        }
 
-        public void SaveState(IMvxBundle state)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public MvxRequestedBy RequestedBy { get; set; }
     }
 }

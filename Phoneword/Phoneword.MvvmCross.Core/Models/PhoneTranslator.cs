@@ -73,7 +73,23 @@ namespace Phoneword.MvvmCross.Core.Models
             buttonText = "Call " + translatedNumber;
 
             return (true, buttonText, translatedNumber);
+
         }
+
+        //public void Translate(string phoneNumberText)
+        //{
+        //    // return isEnabled and button Text.
+
+        //    var translatedNumber = ToNumber(phoneNumberText);
+        //    var buttonText = "Call";
+
+        //    //if (string.IsNullOrWhiteSpace(translatedNumber)) return (false, buttonText, translatedNumber);
+
+        //    buttonText = "Call " + translatedNumber;
+
+        //    //return (true, buttonText, translatedNumber);
+
+        //}
 
         public void Call(string TranslatedNumber)
         {
