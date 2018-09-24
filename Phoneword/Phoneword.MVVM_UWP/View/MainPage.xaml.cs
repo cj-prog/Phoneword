@@ -30,12 +30,10 @@ namespace Phoneword.MVVM_UWP
         public MainPage()
         {
             this.InitializeComponent();
-            Organization = new OrganizationViewModel("Office");
             ISpeechDialogService dialog = new SpeechDialogService();
             PhonewordTranslator = new PhonewordTranslatorViewModel(dialog);
         }
 
-        public OrganizationViewModel Organization { get; set; }
         public PhonewordTranslatorViewModel PhonewordTranslator { get; set; }
     }
 }
