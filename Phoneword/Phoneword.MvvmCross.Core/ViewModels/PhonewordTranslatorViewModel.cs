@@ -12,12 +12,6 @@ namespace Phoneword.MvvmCross.Core.ViewModels
         PhonewordTranslator phonewordTranslator;
         readonly ISpeechDialogService _dialog;
 
-        public PhonewordTranslatorViewModel()//ISpeechDialogService dialog)
-        {
-
-            //_dialog = dialog;
-
-        }
 
         public override async Task Initialize()
         {
@@ -26,8 +20,6 @@ namespace Phoneword.MvvmCross.Core.ViewModels
             phonewordTranslator = new PhonewordTranslator();
             // Call to set default phone number text.
             _phoneNumberText = phonewordTranslator.PhoneNumberText("");
-            // Call to set call button state and text.
-            //DoTranslate();
             _callButtonText = "Call";
         }
 
