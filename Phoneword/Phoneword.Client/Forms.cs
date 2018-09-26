@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Blazor.Components;
-//using Microsoft.AspNetCore.Blazor.Browser.Interop;
+using Microsoft.AspNetCore.Blazor.Browser.Interop;
+using Microsoft.AspNetCore.Blazor;
 using Phoneword;
 using Phoneword.Client.Interfaces;
 
@@ -9,8 +10,8 @@ namespace Phoneword.Client
 {
     public class Forms
     {
-        [Inject]
-        private IMessageBoxProvider MessageBoxProvider { get; set; }
+        //[Inject]
+        //private IMessageBoxProvider MessageBoxProvider { get; set; }
 
         private MainPage Page;
 
@@ -19,22 +20,22 @@ namespace Phoneword.Client
             Page = page;
         }
 
-        //public Task<bool> FormsDisplayAlert(string title, string message, string accept, string cancel)
-        //{
-        //    RegisteredFunction.Invoke<bool>("messageBox", title, message, accept, cancel);
-        //    return null;
-        //}
-
         public Task<bool> FormsDisplayAlert(string title, string message, string accept, string cancel)
         {
-
-            if (string.IsNullOrEmpty(cancel))
-                throw new ArgumentNullException(nameof(cancel));
-            return MessageBoxProvider.ShowMessageBox(title, message);
-
-
-
+            RegisteredFunction.Invoke<bool>("messageBox", title, message, accept, cancel);
+            return null;
         }
+
+        //public Task<bool> FormsDisplayAlert(string title, string message, string accept, string cancel)
+        //{
+
+        //    if (string.IsNullOrEmpty(cancel))
+        //        throw new ArgumentNullException(nameof(cancel));
+        //    return MessageBoxProvider.ShowMessageBox(title, message);
+
+
+
+        //}
 
         public IDialer GetDependencyService()
         {
